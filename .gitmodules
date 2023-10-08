@@ -1,6 +1,6 @@
 [submodule "data_source/masakhane-pos"]
 	path = data_source/masakhane-pos
-	url = git@github.com:masakhane-io/masakhane-pos.git
+	url = https://github.com/masakhane-io/masakhane-pos.git
 [submodule "data_source/lacuna_pos_ner"]
 	path = data_source/lacuna_pos_ner
 	url = https://github.com/masakhane-io/lacuna_pos_ner.git

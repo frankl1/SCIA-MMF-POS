@@ -91,7 +91,7 @@ class AfrikaLM:
         eval_results = self.trainer.evaluate()
         return torch.exp(torch.tensor(eval_results['eval_loss']))
 
-    def train_model(self, output_dir, learning_rate=2e-5, num_train_epochs=2, weight_decay=0.01, batch_size=16, validate_on_test = False):
+    def train_model(self, output_dir, learning_rate=2e-5, num_train_epochs=2, weight_decay=0.01, batch_size=16, validate_on_test = False, push_to_hub=True):
         
         lm_dataset = self.get_lm_dataset()
 
@@ -107,7 +107,7 @@ class AfrikaLM:
             load_best_model_at_end=True,
             report_to='tensorboard',
             save_total_limit=1,
-            push_to_hub=True
+            push_to_hub=push_to_hub
         )
 
         self.trainer = Trainer(
